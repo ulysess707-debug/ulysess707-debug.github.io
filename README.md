@@ -5,6 +5,8 @@
 <head>
 <title>Our One Month ❤️</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body{
 margin:0;
@@ -30,7 +32,7 @@ z-index:10;
 }
 
 input{
-padding:10px;
+padding:12px;
 border-radius:10px;
 border:none;
 font-size:16px;
@@ -62,10 +64,12 @@ margin-bottom:25px;
 
 .heart{
 position:fixed;
-bottom:-20px;
-font-size:20px;
-animation:float 6s linear infinite;
-opacity:0.7;
+bottom:0;
+font-size:24px;
+animation:float 5s linear infinite;
+opacity:1;
+z-index:999;
+pointer-events:none;
 }
 
 @keyframes float{
@@ -102,16 +106,13 @@ opacity:0.7;
 Diana,<br><br>
 
 This past month with you has honestly been one of the best times I’ve had in a while.  
-I didn’t expect things to feel this easy and this real, but being with you just makes everything better.<br><br>
+Being around you just feels natural, and I really like how easy everything is when we’re together.<br><br>
 
-I like how we can talk, laugh, and just be ourselves without it feeling forced.  
-Even the small moments we share end up meaning a lot to me, and I catch myself thinking about them later.<br><br>
+I catch myself thinking about the little moments we’ve had, and they end up meaning more than I expected.  
+You’ve made my days better without even trying, and I appreciate that more than you know.<br><br>
 
-You’ve made my days brighter without even trying, and I really appreciate having you in my life.  
-Getting to know you has been something I wouldn’t trade for anything.<br><br>
-
-I’m really looking forward to making more memories with you, more laughs, more moments, everything.  
-This is just the beginning, and I’m glad it’s with you. ❤️
+I’m really glad I met you, and I’m excited for everything that’s still ahead for us.  
+More memories, more laughs, more time together… all of it. ❤️
 </p>
 
 </div>
@@ -136,10 +137,14 @@ This is just the beginning, and I’m glad it’s with you. ❤️
 
 <script>
 
-function unlock(){
-let name=document.getElementById("nameInput").value.toLowerCase();
+/* WAIT until page fully loads (important for iPhone) */
+document.addEventListener("DOMContentLoaded", function(){
 
-if(name==="diana"){   // password set here
+window.unlock = function(){
+
+let name = document.getElementById("nameInput").value.trim().toLowerCase();
+
+if(name === "diana"){
 
 document.getElementById("lock").style.display="none";
 document.getElementById("main").classList.remove("hidden");
@@ -147,40 +152,41 @@ document.getElementById("main").classList.remove("hidden");
 document.getElementById("welcome").innerHTML="Hey Diana ❤️";
 
 }else{
-document.getElementById("wrong").innerHTML="Ahhhh do you know how spell ur first name  ❤️";
+document.getElementById("wrong").innerHTML="That’s not it 😭 try your name ❤️";
 }
-}
+};
 
-function showLetter(){
+window.showLetter = function(){
 document.getElementById("letter").classList.remove("hidden");
-}
+};
 
 let reasons=[
-"I love the way you make jokes.",
+"I love how you make me smile.",
 "I love talking to you.",
-"I love how you SNOREEE IN UR SLEEP.",
-"I love how you make MEEEEEE SPECIAL ED.",
-"I love spending time WITTTH YOU DOING MY SEAL NOISES DURR.",
-"You just make ME HAPPPERR."
+"I love your personality.",
+"I love how you make my day better.",
+"I love spending time with you.",
+"You just make everything better."
 ];
 
-function reason(){
+window.reason = function(){
 let r=Math.floor(Math.random()*reasons.length);
 document.getElementById("reasonText").innerHTML=reasons[r];
-}
+};
 
-function quiz(ans){
+window.quiz = function(ans){
 if(ans==="A"){
 document.getElementById("quizResult").innerHTML="Correct ❤️";
 }else{
 document.getElementById("quizResult").innerHTML="Wrong 😭 try again";
 }
-}
+};
 
+/* hearts */
 setInterval(()=>{
 let heart=document.createElement("div");
 heart.className="heart";
-heart.innerHTML="❤️";
+heart.innerHTML="💖";
 heart.style.left=Math.random()*100+"vw";
 heart.style.fontSize=(15+Math.random()*20)+"px";
 heart.style.animationDuration=(4+Math.random()*3)+"s";
@@ -189,7 +195,8 @@ document.body.appendChild(heart);
 setTimeout(()=>{heart.remove();},6000);
 },500);
 
-let msgs=[ q 
+/* messages */
+let msgs=[
 "You're special ❤️",
 "I appreciate you",
 "You make me happy",
@@ -201,6 +208,8 @@ setInterval(()=>{
 let r=Math.floor(Math.random()*msgs.length);
 alert(msgs[r]);
 },45000);
+
+});
 
 </script>
 
