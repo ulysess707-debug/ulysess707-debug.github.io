@@ -152,7 +152,7 @@ document.getElementById("main").classList.remove("hidden");
 document.getElementById("welcome").innerHTML="Hey Diana ❤️";
 
 }else{
-document.getElementById("wrong").innerHTML="That’s not it 😭 try your name ❤️";
+document.getElementById("wrong").innerHTML="AHHHH DO YOUUU KNOWWW UR FIRSST NAME GURRR ❤️";
 }
 };
 
@@ -161,12 +161,12 @@ document.getElementById("letter").classList.remove("hidden");
 };
 
 let reasons=[
-"I love how you make me smile.",
-"I love talking to you.",
-"I love your personality.",
+"I love how you laughy grrr.",
+"I love talking to you with my PWINCESSS.",
+"I love your ERRRRMMM ACTUALLY.",
 "I love how you make my day better.",
-"I love spending time with you.",
-"You just make everything better."
+"I love spending time WITTTH UUU.",
+"You just make everything VERRRY FUNNY."
 ];
 
 window.reason = function(){
